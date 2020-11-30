@@ -6,7 +6,8 @@ import json
 import urllib.request
 #import datetime module for getting the today's date
 from datetime import datetime
-
+#import os module for having access to the system
+import os
 
 
 #get and laod the json file and store it in a variable
@@ -23,3 +24,6 @@ fullPath = "/home/wabbajack/Pictures/" + today + ".jpg"
 
 #use urllib module to get the image and save it in defined path
 urllib.request.urlretrieve(imageUrl,fullPath)
+
+#use os module to change the background
+os.system("gsettings set org.gnome.desktop.background picture-uri file:///" + fullPath)
